@@ -1,0 +1,28 @@
+#BlueJ class context
+comment0.target=ListaCSETest
+comment0.text=\n\ The\ test\ class\ ListaCSETest.\n\n\ @author\ \ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=ListaCSETest()
+comment1.text=\n\ Default\ constructor\ for\ test\ class\ ListaCSETest\n
+comment10.params=
+comment10.target=void\ testLongitud()
+comment10.text=\n\ \ \ \ @Test\n\ \ \ \ public\ void\ testAccederPos(){\n\ \ \ \ \ \ \ \ ListaCSE<Integer>\ lista;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ lista\ \=\ new\ ListaCSE<Integer>();\n\ \ \ \ \ \ \ \ assertEquals(true,\ lista.vacia());\n\ \ \ \ \ \ \ \ lista.insertar(3);\n\ \ \ \ \ \ \ \ lista.insertar(1);\n\ \ \ \ \ \ \ \ lista.insertar(5);\n\ \ \ \ \ \ \ \ lista.insertar(4);\n\ \ \ \ \ \ \ \ assertEquals(null,\ lista.acceder(10));\n\ \ \ \ \ \ \ \ assertEquals(false,\ lista.vacia());\n\ \ \ \ \ \ \ \ assertEquals(new\ Integer(3),\ lista.acceder(0));\n\ \ \ \ \ \ \ \ assertEquals(new\ Integer(1),\ lista.acceder(1));\n\ \ \ \ \ \ \ \ assertEquals(new\ Integer(4),\ lista.acceder(3));\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ @Test\n\ \ \ \ public\ void\ testAccederDato(){\n\ \ \ \ \ \ \ \ ListaCSE<Integer>\ lista;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ lista\ \=\ new\ ListaCSE<Integer>();\n\ \ \ \ \ \ \ \ assertEquals(true,\ lista.vacia());\n\ \ \ \ \ \ \ \ lista.insertar(3);\n\ \ \ \ \ \ \ \ lista.insertar(1);\n\ \ \ \ \ \ \ \ lista.insertar(5);\n\ \ \ \ \ \ \ \ lista.insertar(4);\n\ \ \ \ \ \ \ \ assertEquals(null,\ lista.acceder(new\ Integer(10)));\n\ \ \ \ \ \ \ \ assertEquals(false,\ lista.vacia());\n\ \ \ \ \ \ \ \ assertEquals(null,\ lista.acceder(new\ Integer(0)));\n\ \ \ \ \ \ \ \ assertEquals(new\ Integer(1),\ lista.acceder(new\ Integer(1)));\n\ \ \ \ \ \ \ \ assertEquals(new\ Integer(3),\ lista.acceder(new\ Integer(3)));\n\ \ \ \ \ \ \ \ assertEquals(new\ Integer(4),\ lista.acceder(new\ Integer(4)));\n\ \ \ \ \ \ \ \ \n\ \ \ \ }\n
+comment2.params=
+comment2.target=void\ setUp()
+comment2.text=\n\ Sets\ up\ the\ test\ fixture.\n\n\ Called\ before\ every\ test\ case\ method.\n
+comment3.params=
+comment3.target=void\ tearDown()
+comment3.text=\n\ Tears\ down\ the\ test\ fixture.\n\n\ Called\ after\ every\ test\ case\ method.\n
+comment4.params=
+comment4.target=void\ testInsertarDato()
+comment5.params=
+comment5.target=void\ testInsertarDatoEnPos()
+comment6.params=
+comment6.target=void\ testInsertarDatoIni()
+comment7.params=
+comment7.target=void\ testEliminarDePos()
+comment8.params=
+comment8.target=void\ testEliminarDato()
+comment9.params=
+comment9.target=void\ testEliminarTodas()
+numComments=11

@@ -8,17 +8,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * The test class ListaDETest.
+ * The test class ListaCSETest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class ListaDETest
+public class ListaCSETest
 {
     /**
-     * Default constructor for test class ListaDETest
+     * Default constructor for test class ListaCSETest
      */
-    public ListaDETest()
+    public ListaCSETest()
     {
     }
 
@@ -44,9 +44,9 @@ public class ListaDETest
     
     @Test
     public void testInsertarDato(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3);
         assertEquals(false, lista.vacia());
@@ -54,9 +54,9 @@ public class ListaDETest
     
     @Test
     public void testInsertarDatoEnPos(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3, 2);
         assertEquals(true, lista.vacia());
@@ -66,53 +66,53 @@ public class ListaDETest
     
     @Test
     public void testInsertarDatoIni(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertarIni(3);
         assertEquals(false, lista.vacia());
     }
-
+    
     @Test
     public void testEliminarDePos(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         assertEquals(null, lista.eliminar(10));
         lista.insertar(3);
-        assertEquals(null, lista.eliminar(10));
-        assertEquals(false, lista.vacia());
-        assertEquals(new Integer(3), lista.eliminar(0));
+        assertEquals(new Integer(3), lista.eliminar(10));
+        assertEquals(true, lista.vacia());
+        assertEquals(null, lista.eliminar(0));
         assertEquals(true, lista.vacia());
         lista.insertar(2);
         lista.insertar(6);
         lista.insertar(54);
         assertEquals(false, lista.vacia());
-        assertEquals(new Integer(6), lista.eliminar(1));
+        assertEquals(new Integer(6), lista.eliminar(4));
     }
     
     @Test
     public void testEliminarDato(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         assertEquals(null, lista.eliminar(10));
         lista.insertar(3);
-        assertEquals(null, lista.eliminar(new Integer(0)));
-        assertEquals(false, lista.vacia());
         assertEquals(new Integer(3), lista.eliminar(new Integer(3)));
+        assertEquals(true, lista.vacia());
+        assertEquals(null, lista.eliminar(new Integer(3)));
         assertEquals(true, lista.vacia());
         
     }
     
     @Test
     public void testEliminarTodas(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.eliminarTodas(0);
         lista.insertar(3);
@@ -125,12 +125,12 @@ public class ListaDETest
         lista.eliminarTodas(1);
         assertEquals(4, lista.longitud());
     }
-    
+    /*
     @Test
     public void testAccederPos(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3);
         lista.insertar(1);
@@ -145,9 +145,9 @@ public class ListaDETest
     
     @Test
     public void testAccederDato(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3);
         lista.insertar(1);
@@ -161,12 +161,12 @@ public class ListaDETest
         assertEquals(new Integer(4), lista.acceder(new Integer(4)));
         
     }
-    
+    */
     @Test
     public void testLongitud(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3);
         lista.insertar(1);
@@ -174,12 +174,12 @@ public class ListaDETest
         lista.insertar(4);
         assertEquals(4, lista.longitud());
     }
-    
+    /*
     @Test
     public void testBuscarDato(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3);
         lista.insertar(1);
@@ -191,9 +191,9 @@ public class ListaDETest
     
     @Test
     public void testIndiceDe(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3);
         lista.insertar(1);
@@ -205,9 +205,9 @@ public class ListaDETest
     
     @Test
     public void testEliminarIntervalo(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.eliminar(0, 10);
         lista.insertar(3);
@@ -224,9 +224,9 @@ public class ListaDETest
     
     @Test
     public void testAccederIntervalo(){
-        ListaDE<Integer> lista;
+        ListaCSE<Integer> lista;
         
-        lista = new ListaDE<Integer>();
+        lista = new ListaCSE<Integer>();
         assertEquals(true, lista.vacia());
         lista.insertar(3);
         lista.insertar(1);
@@ -237,6 +237,5 @@ public class ListaDETest
         assertNotNull(lista.acceder(0, 3));
         assertEquals(false, lista.vacia());
         
-    }
-    
+    }*/
 }

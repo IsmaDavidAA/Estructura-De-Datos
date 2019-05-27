@@ -47,7 +47,7 @@ public class ListaDE<T> implements Lista<T>{
                 aux = ini;
                 while(aux.getSuc() != null && pos > 1 ){
                     aux = aux.getSuc();
-                    pos = pos - 1;
+                    pos --;
                 }
                 if(aux.getSuc() == null){
                     if(pos == 1){
@@ -68,29 +68,27 @@ public class ListaDE<T> implements Lista<T>{
     public void insertarIni(T dato){
         NodoDE<T> aux;
         NodoDE<T> nuevo = new NodoDE<T>(dato);
-        if(vacia()){            
-            ini = nuevo;
-        }else{
+        if(!vacia()){            
             aux = ini;
             aux.setAnt(nuevo);
-            nuevo.setSuc(aux);
-            ini = nuevo;
+            nuevo.setSuc(aux);   
         }
+        ini = nuevo;
     }
     public T eliminar(int pos){
         T eliminado = null;
         NodoDE<T> auxAnt,aux,auxSuc;     
         if(pos == 0){
-                if(!vacia()){
-                    eliminado = ini.getDato();
-                    ini = ini.getSuc();  
-                }
-            }else{
-                if(!vacia()){
-                    aux = ini;
-                    while(aux.getSuc() != null && pos != 0 ){
-                        aux = aux.getSuc();
-                    pos = pos - 1;
+            if(!vacia()){
+                eliminado = ini.getDato();
+                ini = ini.getSuc();  
+            }
+        }else{
+            if(!vacia()){
+                aux = ini;
+                while(aux.getSuc() != null && pos != 0 ){
+                    aux = aux.getSuc();
+                    pos --;
                 }
                 auxAnt = aux.getAnt();
                 if(pos == 0){
@@ -143,7 +141,7 @@ public class ListaDE<T> implements Lista<T>{
         if(!vacia()){       
             aux = ini;
             int pos = longitud();
-            while(0 >= pos && desde >= 0 && hasta >= 0){
+            while(0 <= pos && desde >= 0 && hasta >= 0 && aux != null){
                 if(desde == 0 && hasta >= 0){
                     auxAnt = aux.getAnt();
                     if(aux.getSuc() == null){
@@ -155,13 +153,12 @@ public class ListaDE<T> implements Lista<T>{
                         auxSuc.setAnt(auxAnt);
                     }
                     aux = auxAnt.getSuc();
-                    hasta = hasta -1;
                 }else{
                     aux = aux.getSuc();
-                    desde = desde -1;
-                    hasta = hasta -1;
+                    desde --;
                 }
-                pos = pos -1;
+                hasta --;
+                pos --;
             }     
         }
     }
@@ -172,7 +169,6 @@ public class ListaDE<T> implements Lista<T>{
             boolean encontrado = false;      
             do{
                 if(aux.getDato().equals(dato))  encontrado = true;
-                
                 if(encontrado){
                     auxAnt = aux.getAnt();
                     if(aux.getSuc() == null){
@@ -185,9 +181,7 @@ public class ListaDE<T> implements Lista<T>{
                     }
                     encontrado = false;
                     aux = auxAnt.getSuc();
-                }else{
-                    aux = aux.getSuc();
-                }   
+                }else   aux = aux.getSuc();
             }while(aux.getSuc() != null);         
         }
     }
@@ -217,13 +211,29 @@ public class ListaDE<T> implements Lista<T>{
                     encontrado = true;
                 }
                 aux = aux.getSuc();
-                pos = pos + 1;
+                pos ++;
             }  
         }
         return datito;
     }
     public Lista<T> acceder(int desde, int hasta){
-        return null;
+        NodoDE<T> aux;
+        ListaDE<T> nuevaLista = null; 
+        if(!vacia()){  
+            aux = ini;
+            int pos = longitud();
+            if(desde < pos){
+                nuevaLista = new ListaDE<T>();  
+                while(0 <= pos && desde >= 0 && hasta >= 0 && aux != null){
+                    if(desde == 0 && hasta >= 0)    nuevaLista.insertar(aux.getDato());
+                    else  desde --;
+                    hasta --;
+                    aux = aux.getSuc();
+                    pos --;
+                }        
+            }
+        }
+        return nuevaLista;
     }
     public int longitud(){
         NodoDE<T> aux;
@@ -233,7 +243,7 @@ public class ListaDE<T> implements Lista<T>{
             longi = 1;
             while(aux.getSuc() != null){
                 aux = aux.getSuc();
-                longi = longi + 1;
+                longi ++;
             }
         }
         return longi;
@@ -247,7 +257,7 @@ public class ListaDE<T> implements Lista<T>{
             while(pos < longitud()){
                 if(aux.getDato().equals(dato)) existe = true;
                 aux = aux.getSuc();
-                pos = pos + 1;
+                pos ++;
             }
         }
         return existe;
@@ -259,14 +269,12 @@ public class ListaDE<T> implements Lista<T>{
         if(!vacia()){
             aux = ini;            
             while(pos < longitud() && !encontrado){
-                if(aux.getDato().equals(dato)){
-                    encontrado = true;
-                }
+                if(aux.getDato().equals(dato))encontrado = true;
                 aux = aux.getSuc();
-                pos = pos + 1;
+                pos ++;
             }
         }
-        if(encontrado) pos = pos - 1;
+        if(encontrado) pos --;
         else pos = -1;
         return pos;
     }

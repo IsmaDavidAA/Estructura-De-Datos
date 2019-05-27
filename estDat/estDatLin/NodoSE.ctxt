@@ -1,2 +1,16 @@
 #BlueJ class context
-numComments=0
+comment0.target=NodoSE
+comment0.text=\n\ Write\ a\ description\ of\ class\ NodoSE\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=NodoSE()
+comment2.params=dato
+comment2.target=NodoSE(java.lang.Object)
+comment3.params=dato
+comment3.target=void\ setDato(java.lang.Object)
+comment4.params=suc
+comment4.target=void\ setSuc(NodoSE)
+comment5.params=
+comment5.target=NodoSE\ getSuc()
+comment6.params=
+comment6.target=java.lang.Object\ getDato()
+numComments=7

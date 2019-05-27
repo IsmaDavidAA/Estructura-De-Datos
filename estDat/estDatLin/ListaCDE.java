@@ -12,11 +12,28 @@ public class ListaCDE<T> implements Lista<T>{
     private NodoDE<T> ini;
 
     public boolean vacia(){
-        return false;
+        return ini == null;
     }
     public void insertar(T dato){
+        NodoDE<T> nuevo = new NodoDE<T>(dato);
+        NodoDE<T> aux;
+        if(vacia()){
+            ini = nuevo;
+            ini.setSuc(ini);
+            ini.setAnt(ini);
+        }else{
+            aux = ini;
+            while(aux.getSuc() != ini){
+                aux = aux.getSuc();
+            }
+            nuevo.setAnt(aux);
+            nuevo.setSuc(ini);
+            aux.setSuc(nuevo);
+            ini.setAnt(nuevo);
+        }
     }
     public void insertar(T dato, int pos){
+        
     }
     public void insertarIni(T dato){
     }
