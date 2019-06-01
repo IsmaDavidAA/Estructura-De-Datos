@@ -13,6 +13,7 @@ public class ListaCSE<T> implements Lista<T>{
     public boolean vacia(){
         return ini == null;
     }    
+    
     public void insertar(T dato){
         NodoSE<T> aux;
         NodoSE<T> nuevo = new NodoSE<T>(dato);
@@ -28,6 +29,7 @@ public class ListaCSE<T> implements Lista<T>{
             aux.setSuc(nuevo);
         }
     }
+    
     public void insertar(T dato, int pos){
         NodoSE<T> aux;
         NodoSE<T> nuevo = new NodoSE<T>(dato); 
@@ -84,12 +86,13 @@ public class ListaCSE<T> implements Lista<T>{
             if(longitud() == 1) ini = null;
             else{
                 auxSuc = auxSuc.getSuc();
-                if(aux.getSuc() == ini) ini = aux;    
-                aux.setSuc(auxSuc);
+                if(aux.getSuc() == ini) ini = auxSuc;    
+                aux.setSuc(ini);
             }
         }
         return dato;
     }
+    
     public T eliminar(T dato){
         T datito = null; 
         NodoSE<T> aux,auxSuc;
@@ -117,42 +120,63 @@ public class ListaCSE<T> implements Lista<T>{
         }
         return datito;
     }
+    
     public void eliminar(int desde, int hasta){
     }
+    
     public void eliminarTodas(T dato){
         NodoSE<T> aux,auxSuc;
         if(!vacia()){
             aux = ini;
-            if(!dato.equals(aux.getDato())){
-                while(dato.equals(aux.getDato()))   aux = aux.getSuc();
-            }else{
-                while(aux.getSuc() != ini)  aux = aux.getSuc();
-            }
             auxSuc = aux.getSuc();
-            if(longitud() == 1) ini = null;
-            else{
-                auxSuc = auxSuc.getSuc();
-                if(aux.getSuc() == ini) ini = aux;    
-                aux.setSuc(auxSuc);
+            int longitud = longitud();
+            if(longitud == 1){ if(dato.equals(aux.getDato())) ini = null;
+            }else{
+                for(int i = 0; i<= longitud; i++){
+                    if(dato.equals(aux.getDato()))eliminar(dato);
+                    else    aux = aux.getSuc();
+                }
             }
-            eliminarTodas(dato);
         }
     }
+    
     public T acceder(int pos){
-        return null;
+        NodoSE<T> aux;
+        T elemento;
+        if(vacia()) elemento = null;
+        else{
+            aux = ini;
+            while(pos != 0){
+                aux = aux.getSuc();
+                pos--;
+            }
+            elemento = aux.getDato();
+        }
+        return elemento;
     }
+    
     public T acceder(T dato){
-        return null;
+        NodoSE<T> aux;
+        T elemento = null;
+        if(!vacia()){
+            aux = ini;
+            do{
+                if(dato.equals(aux.getDato())) elemento = aux.getDato(); 
+                aux = aux.getSuc();
+            }while(aux != ini && elemento == null);
+        }
+        return elemento;
     }
+    
     public Lista<T> acceder(int desde, int hasta){
         return null;
     }
+    
     public int longitud(){
         NodoSE<T> aux;
         int pos;
-        if(vacia()){
-            pos = -1;
-        }else{
+        if(vacia()) pos = -1;
+        else{
             aux = ini;
             pos = 1;
             while(aux.getSuc() != ini){
@@ -162,10 +186,33 @@ public class ListaCSE<T> implements Lista<T>{
         }
         return pos;
     }
+    
     public boolean buscar(T dato){
-        return false;
+        NodoSE<T> aux;
+        boolean encontrado = false;
+        if(!vacia()){
+            aux = ini;
+            do{
+                if(dato.equals(aux.getDato())) encontrado = true; 
+                aux = aux.getSuc();
+            }while(aux != ini && encontrado == false);
+        }
+        return encontrado;
     }
+    
     public int indiceDe(T dato){
-        return 0;
+        int pos = -1;
+        NodoSE<T> aux;
+        boolean encontrado = false;
+        if(!vacia() && buscar(dato)){
+            aux = ini;
+            do{
+                if(dato.equals(aux.getDato())) encontrado = true; 
+                aux = aux.getSuc();
+                pos++;
+            }while(aux != ini && encontrado == false);
+        }
+        return pos;
     }
+    
 }

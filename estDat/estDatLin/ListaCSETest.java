@@ -125,7 +125,7 @@ public class ListaCSETest
         lista.eliminarTodas(1);
         assertEquals(4, lista.longitud());
     }
-    /*
+    
     @Test
     public void testAccederPos(){
         ListaCSE<Integer> lista;
@@ -136,7 +136,7 @@ public class ListaCSETest
         lista.insertar(1);
         lista.insertar(5);
         lista.insertar(4);
-        assertEquals(null, lista.acceder(10));
+        assertEquals(new Integer(5), lista.acceder(10));
         assertEquals(false, lista.vacia());
         assertEquals(new Integer(3), lista.acceder(0));
         assertEquals(new Integer(1), lista.acceder(1));
@@ -161,7 +161,7 @@ public class ListaCSETest
         assertEquals(new Integer(4), lista.acceder(new Integer(4)));
         
     }
-    */
+    
     @Test
     public void testLongitud(){
         ListaCSE<Integer> lista;
@@ -174,7 +174,7 @@ public class ListaCSETest
         lista.insertar(4);
         assertEquals(4, lista.longitud());
     }
-    /*
+    
     @Test
     public void testBuscarDato(){
         ListaCSE<Integer> lista;
@@ -237,5 +237,5 @@ public class ListaCSETest
         assertNotNull(lista.acceder(0, 3));
         assertEquals(false, lista.vacia());
         
-    }*/
+    }
 }
