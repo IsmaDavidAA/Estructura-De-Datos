@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Ej_2_EDNL
+comment0.text=\n\ Write\ a\ description\ of\ class\ Ej_2_\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Ej_2_EDNL()
+comment2.params=
+comment2.target=void\ llenarArbol()
+comment3.params=
+comment3.target=java.lang.String\ recogerIntercalado()
+comment4.params=nuevo\ arb
+comment4.target=BiCola\ inOrden(BiCola,\ ArbolBin)
+numComments=5

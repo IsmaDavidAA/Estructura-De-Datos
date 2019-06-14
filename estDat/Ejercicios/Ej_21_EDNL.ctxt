@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Ej_21_EDNL
+comment0.text=\n\ Write\ a\ description\ of\ class\ Ej_21_EDNL\u00E7\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Ej_21_EDNL()
+comment2.params=
+comment2.target=void\ llenarPrueba()
+comment3.params=
+comment3.target=ListaSE\ sacarMedia()
+comment4.params=menor\ mayor
+comment4.target=ListaSE\ media(BiCola,\ BiCola)
+comment5.params=
+comment5.target=ListaSE\ lista()
+comment6.params=primera\ segunda
+comment6.target=BiCola\ calcularMenor(BiCola,\ BiCola)
+comment7.params=primera\ segunda
+comment7.target=BiCola\ calcularMayor(BiCola,\ BiCola)
+numComments=8

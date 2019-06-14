@@ -1,7 +1,5 @@
 
-package estDat.estDatLin;
-
-public class ListaSE<T> implements Lista<T>{
+public class ListaSE<T>{
     private T          ini;
     private ListaSE<T> sig;
     public ListaSE(){

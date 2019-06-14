@@ -1,19 +1,15 @@
 package estDat.estDatLin;
 
-
-/**
- * Write a description of class ListaCSE here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class ListaCSE<T> implements Lista<T>{   
+public class ListaCSE<T>{   
     private NodoSE<T> ini;
  
     public boolean vacia(){
         return ini == null;
     }    
     
+    public void setLista(ListaCSE<T> nuevo){
+        ini = nuevo.ini;
+    }
     public void insertar(T dato){
         NodoSE<T> aux;
         NodoSE<T> nuevo = new NodoSE<T>(dato);
@@ -27,6 +23,21 @@ public class ListaCSE<T> implements Lista<T>{
             }
             nuevo.setSuc(ini);
             aux.setSuc(nuevo);
+        }
+    }
+    
+    public void insertarNodo(NodoSE<T> nodo){
+        NodoSE<T> aux;
+        if(vacia()){
+            ini = nodo;
+            ini.setSuc(ini);
+        }else{
+            aux = ini;
+            while(aux.getSuc() != ini){
+                aux = aux.getSuc();
+            }
+            nodo.setSuc(ini);
+            aux.setSuc(nodo);
         }
     }
     
@@ -121,8 +132,6 @@ public class ListaCSE<T> implements Lista<T>{
         return datito;
     }
     
-    public void eliminar(int desde, int hasta){
-    }
     
     public void eliminarTodas(T dato){
         NodoSE<T> aux,auxSuc;
@@ -167,10 +176,7 @@ public class ListaCSE<T> implements Lista<T>{
         }
         return elemento;
     }
-    
-    public Lista<T> acceder(int desde, int hasta){
-        return null;
-    }
+
     
     public int longitud(){
         NodoSE<T> aux;

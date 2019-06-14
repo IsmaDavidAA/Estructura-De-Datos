@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Panqueque
+comment1.params=tama\u00F1o
+comment1.target=Panqueque(int)
+comment2.params=
+comment2.target=Panqueque()
+comment3.params=tama\u00F1o
+comment3.target=void\ setTama\u00F1o(int)
+comment4.params=
+comment4.target=int\ getTama\u00F1o()
+numComments=5

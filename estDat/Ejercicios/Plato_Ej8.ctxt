@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Plato_Ej8
+comment1.params=
+comment1.target=Plato_Ej8()
+comment2.params=panqueque
+comment2.target=void\ setPanqueques(Pila)
+comment3.params=
+comment3.target=Pila\ getPanqueques()
+comment4.params=nuevo
+comment4.target=void\ addPanqueque(Panqueque)
+comment5.params=
+comment5.target=Panqueque\ ultimo()
+numComments=6

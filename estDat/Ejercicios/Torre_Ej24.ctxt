@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Torre_Ej24
+comment1.params=
+comment1.target=Torre_Ej24()
+comment2.params=canino
+comment2.target=void\ insertar(Bloque)
+comment3.params=
+comment3.target=boolean\ vacia()
+comment4.params=
+comment4.target=java.lang.Integer\ getAltura()
+numComments=5

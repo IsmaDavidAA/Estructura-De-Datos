@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ColaDePrioridades
+comment1.params=
+comment1.target=ColaDePrioridades()
+comment2.params=dato
+comment2.target=void\ encolar(java.lang.Comparable)
+comment3.params=actual\ dato
+comment3.target=NodoDE\ buscarUbicacion(NodoDE,\ java.lang.Comparable)
+numComments=4

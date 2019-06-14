@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Ej_31_EDNL
+comment0.text=\n\ Write\ a\ description\ of\ class\ Ej_31_EDNL\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Ej_31_EDNL()
+comment2.params=
+comment2.target=void\ llenarArbol()
+comment3.params=
+comment3.target=boolean\ fusionables()
+comment4.params=
+comment4.target=boolean\ fusionablesP()
+comment5.params=x\ y
+comment5.target=boolean\ igual(int,\ int)
+comment6.params=arb
+comment6.target=Pila\ preOrden(ArbolBin)
+comment7.params=p\ arb
+comment7.target=void\ listaPila(Pila,\ ArbolBin)
+numComments=8
